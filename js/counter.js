@@ -25,16 +25,34 @@ let lastAdded = 0;
 // 画面に反映
 document.getElementById("total").textContent = total;
 
+
+// --------------------------------------
+//  シール1枚貼る（+1）
+// --------------------------------------
 function addNumber(num) {
   lastAdded = num;
   total += num;
 
   document.getElementById("total").textContent = total;
-
-  // ユーザーごとに保存
   localStorage.setItem(keyName, total);
+
+  // --- シール演出 ---
+  const area = document.getElementById("sticker-effect-area");
+  const sticker = document.createElement("div");
+  sticker.className = "sticker-pop";
+  sticker.textContent = "🟡"; // ← 好きな絵文字に変更OK（⭐️、💛、🔵 など）
+  area.appendChild(sticker);
+
+  // 0.6秒後に消す
+  setTimeout(() => {
+    sticker.remove();
+  }, 600);
 }
 
+
+// --------------------------------------
+//  ひとつ前に戻る（UNDO）
+// --------------------------------------
 function undo() {
   if (lastAdded === 0) return;
 
@@ -45,6 +63,10 @@ function undo() {
   localStorage.setItem(keyName, total);
 }
 
+
+// --------------------------------------
+//  リセット（0に戻す）
+// --------------------------------------
 function resetTotal() {
   total = 0;
   lastAdded = 0;
