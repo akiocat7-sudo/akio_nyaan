@@ -50,7 +50,7 @@ html, body {
 }
 
 /* ============================
-   Main Button
+   Main Button（パステル）
 ============================ */
 .single-button-area {
   text-align: center;
@@ -61,23 +61,23 @@ html, body {
   width: 100%;
   padding: 18px;
   font-size: 18px;
-  background: #3a7bd5; /* 上品なブルー */
+  background: linear-gradient(135deg, #ffb7d5, #ff8fb8);
   color: white;
   border: none;
   border-radius: 14px;
   cursor: pointer;
   font-weight: 600;
-  box-shadow: 0 4px 12px rgba(58, 123, 213, 0.25);
+  box-shadow: 0 4px 12px rgba(255, 150, 180, 0.25);
   transition: 0.25s;
 }
 
 .main-btn:hover {
-  background: #2f6bbd;
-  box-shadow: 0 6px 16px rgba(58, 123, 213, 0.35);
+  background: linear-gradient(135deg, #ff9fc8, #ff7aa8);
+  box-shadow: 0 6px 16px rgba(255, 150, 180, 0.35);
 }
 
 /* ============================
-   Undo Button
+   Undo Button（パステル）
 ============================ */
 .bottom-buttons {
   display: flex;
@@ -91,16 +91,16 @@ html, body {
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  background: #ff6b6b;
+  background: linear-gradient(135deg, #ff9aa2, #ff7b89);
   color: white;
   font-weight: 600;
-  box-shadow: 0 4px 10px rgba(255, 107, 107, 0.25);
+  box-shadow: 0 4px 12px rgba(255, 140, 150, 0.25);
   transition: 0.25s;
 }
 
 .undo-btn:hover {
-  background: #e85a5a;
-  box-shadow: 0 6px 14px rgba(255, 107, 107, 0.35);
+  background: linear-gradient(135deg, #ff8a95, #ff6b7a);
+  box-shadow: 0 6px 16px rgba(255, 140, 150, 0.35);
 }
 
 /* ============================
@@ -128,7 +128,9 @@ html, body {
   color: #333;
 }
 
-/* 月締めボタン */
+/* ============================
+   月締めボタン（パステル）
+============================ */
 .month-close-area {
   flex: 0.8;
   min-width: 140px;
@@ -139,57 +141,16 @@ html, body {
 
 .month-close-btn {
   padding: 12px 14px;
-  background: #3a7bd5;
+  background: linear-gradient(135deg, #ffb7d5, #ff8fb8);
   color: white;
   border: none;
   border-radius: 12px;
   font-size: 13px;
   cursor: pointer;
   font-weight: 600;
-  box-shadow: 0 4px 12px rgba(58, 123, 213, 0.25);
+  box-shadow: 0 4px 12px rgba(255, 150, 180, 0.25);
   transition: 0.25s;
 }
 
 .month-close-btn:hover {
-  background: #2f6bbd;
-  box-shadow: 0 6px 16px rgba(58, 123, 213, 0.35);
-}
-
-/* ============================
-   List Items
-============================ */
-#history li,
-#past li {
-  background: white;
-  padding: 10px 14px;
-  margin-bottom: 8px;
-  border-radius: 10px;
-  font-size: 13px;
-  color: #333;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-  transition: 0.2s;
-}
-
-#history li:hover,
-#past li:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
-
-/* ============================
-   Mobile
-============================ */
-@media (max-width: 480px) {
-  #total {
-    font-size: 56px;
-  }
-
-  .main-btn {
-    font-size: 16px;
-  }
-
-  .month-close-btn {
-    font-size: 12px;
-    padding: 10px 12px;
-  }
-}
+  background: linear-gradient(135deg, #ff9fc8

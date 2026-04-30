@@ -1,48 +1,80 @@
+/* 背景 */
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  background: #f5f5f5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  background: #f2f4f7;
+  font-family: "Helvetica Neue", "Inter", Arial, sans-serif;
 }
 
-.container {
+/* コンテナ */
+.login-container {
+  max-width: 360px;
+  margin: 80px auto;
   text-align: center;
 }
 
+/* タイトル */
 .title {
-  margin-bottom: 20px;
-  font-size: 22px;
-  font-weight: bold;
+  font-size: 26px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 6px;
 }
 
-.user-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 150px);
-  gap: 20px;
-  justify-content: center;
+.subtitle {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 26px;
 }
 
-.user-card {
-  background: #fff;
-  padding: 25px 0;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  cursor: pointer;
+/* ボックス */
+.login-box {
+  background: white;
+  padding: 28px 24px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+/* 入力欄 */
+.login-box input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 14px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 14px;
+  outline: none;
   transition: 0.2s;
-  font-size: 18px;
-  font-weight: 600;
 }
 
-.user-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+.login-box input:focus {
+  border-color: #ff9fc8;
+  box-shadow: 0 0 6px rgba(255,150,180,0.3);
 }
 
-#message {
-  margin-top: 20px;
+/* ログインボタン（パステル） */
+.login-btn {
+  width: 100%;
+  padding: 14px;
   font-size: 16px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ffb7d5, #ff8fb8);
+  color: white;
+  box-shadow: 0 4px 12px rgba(255,150,180,0.25);
+  transition: 0.25s;
+}
+
+.login-btn:hover {
+  background: linear-gradient(135deg, #ff9fc8, #ff7aa8);
+  box-shadow: 0 6px 16px rgba(255,150,180,0.35);
+}
+
+/* メッセージ */
+.message {
+  margin-top: 14px;
+  font-size: 14px;
+  color: #ff6b7a;
 }
