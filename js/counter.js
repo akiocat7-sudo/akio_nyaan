@@ -4,6 +4,20 @@ const currentUser = localStorage.getItem("currentUser");
 // ユーザーごとの保存キー
 const keyName = "total_" + currentUser;
 
+// 都会的テーマカラー
+const themes = {
+  user1: "#1E88E5", // Tokyo Blue
+  user2: "#4CAF50", // Forest Gray-Green
+  user3: "#7E57C2", // Metro Purple
+  user4: "#FB8C00"  // Sunset Orange
+};
+
+// 選択されたテーマカラー
+const themeColor = themes[currentUser];
+
+// ページにテーマを適用
+document.documentElement.style.setProperty("--theme-color", themeColor);
+
 // 保存されている値を読み込む（なければ0）
 let total = Number(localStorage.getItem(keyName)) || 0;
 
