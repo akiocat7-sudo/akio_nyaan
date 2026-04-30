@@ -1,100 +1,49 @@
-/* ================================
-   Urban Minimal Mystery Game UI
-   都会 × ミニマル × 未来感
-================================ */
+/* ===== 既存のスタイルはそのまま ===== */
 
-body {
-  margin: 0;
-  padding: 40px;
-  background: #0b0c0f;
-  font-family: "Helvetica Neue", "Segoe UI", "Noto Sans JP", sans-serif;
-  color: #e8e8e8;
+/* ===== 十字キー（D-Pad） ===== */
+#dpad {
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 
-/* --- メインコンテナ --- */
-#game {
-  width: 100%;
-  max-width: 720px;
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(18px) saturate(140%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 22px;
-  padding: 48px;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.45);
-  animation: fadeIn 0.8s ease;
+.middle-row {
+  display: flex;
+  gap: 8px;
 }
 
-/* --- テキスト --- */
-#game p {
-  font-size: 1.35rem;
-  line-height: 1.9;
-  margin-bottom: 36px;
-  letter-spacing: 0.03em;
-  color: #f2f2f2;
-}
-
-/* --- 選択肢カード --- */
-.choice {
-  padding: 18px 22px;
-  margin: 14px 0;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.btn {
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
   cursor: pointer;
-  transition: 0.25s ease;
-  font-size: 1.15rem;
-  letter-spacing: 0.02em;
-  -webkit-tap-highlight-color: transparent; /* スマホの青枠防止 */
+  transition: 0.2s;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.choice:hover {
-  background: rgba(255, 255, 255, 0.12);
-  transform: translateY(-3px);
-  border-color: rgba(255, 255, 255, 0.2);
+.btn:active {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(0.95);
 }
 
-.choice:active {
-  transform: translateY(0);
-  background: rgba(255, 255, 255, 0.18);
-}
-
-/* --- フェードイン --- */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ================================
-   📱 スマホ最適化
-================================ */
+/* スマホ最適化 */
 @media (max-width: 600px) {
-  body {
-    padding: 16px;
+  #dpad {
+    bottom: 20px;
+    left: 20px;
   }
-
-  #game {
-    padding: 28px;
-    border-radius: 18px;
-  }
-
-  #game p {
-    font-size: 1.15rem;
-    line-height: 1.8;
-    margin-bottom: 28px;
-  }
-
-  .choice {
-    font-size: 1.05rem;
-    padding: 16px 18px;
-    margin: 12px 0;
-    border-radius: 12px;
+  .btn {
+    width: 52px;
+    height: 52px;
+    font-size: 20px;
   }
 }
