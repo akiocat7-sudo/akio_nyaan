@@ -1,3 +1,4 @@
+<!-- counter.html -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -10,33 +11,44 @@
 
   <div class="container">
 
-    <!-- 追加したタイトル（最上部） -->
-    <h2 class="title">今月のシール枚数</h2>
+    <!-- 月タイトル（JSで「4月のシール枚数」などに書き換え） -->
+    <h2 class="title" id="month-title">今月のシール枚数</h2>
 
-    <!-- メインタイトル -->
+    <!-- サブタイトル -->
     <h3 class="subtitle">シールカウンター</h3>
 
     <!-- 合計値 -->
     <h1 id="total">0</h1>
 
-    <!-- メインボタン（シール1枚貼る） -->
+    <!-- メインボタン（シールを1枚貼る） -->
     <div class="single-button-area">
-      <button class="main-btn" onclick="addNumber(1)">シール1枚貼る</button>
+      <button class="main-btn" onclick="addNumber(1)">シールを1枚貼る</button>
     </div>
 
     <!-- シール演出エリア -->
     <div id="sticker-effect-area"></div>
 
-    <!-- 下部ボタン（剥がす・リセット） -->
+    <!-- 下部ボタン（シールを剥がす・リセット） -->
     <div class="bottom-buttons">
       <button class="undo-btn" onclick="undo()">シールを剥がす</button>
       <button class="reset-btn" onclick="resetTotal()">リセット</button>
     </div>
 
-    <!-- 履歴表示 -->
+    <!-- 履歴（ボタン押下日時 最新10件） -->
     <div class="history-area">
       <h3 class="history-title">履歴</h3>
       <ul id="history-list"></ul>
+    </div>
+
+    <!-- 月締めボタン -->
+    <div class="month-close-area">
+      <button class="month-close-btn" onclick="closeMonth()">今月のシール枚数を確定する</button>
+    </div>
+
+    <!-- 過去の枚数（最大12件） -->
+    <div class="past-area">
+      <h3 class="past-title">過去の枚数</h3>
+      <ul id="past-list"></ul>
     </div>
 
   </div>
