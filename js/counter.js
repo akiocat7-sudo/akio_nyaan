@@ -1,36 +1,58 @@
 // ===============================
-// Firestore 同期版 counter.js
+// Firebase 初期化
 // ===============================
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  setDoc,
+  updateDoc,
+  arrayUnion
+} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-// ★ Firebase SDKをここでimport（HTMLのscriptは不要になる）
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-app.js";
-import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore.js";
-
-// Firebase設定・初期化
 const firebaseConfig = {
-  apiKey: "AIzaSyCM7YuhH5I3WGOkV7fbWTGvL4ZZYx46l2Q",
-  authDomain: "akionyaan.firebaseapp.com",
-  projectId: "akionyaan",
-  storageBucket: "akionyaan.firebasestorage.app",
-  messagingSenderId: "684249924744",
-  appId: "1:684249924744:web:4e6e449d2310c9a9024b3d",
-  measurementId: "G-8CMM9BC2B5"
+  apiKey: "AIzaSyC3z0Qxj0u6y8x0qY6qv1t8o0x0x0x0x0",
+  authDomain: "seal-counter.firebaseapp.com",
+  projectId: "seal-counter",
+  storageBucket: "seal-counter.appspot.com",
+  messagingSenderId: "000000000000",
+  appId: "1:000000000000:web:xxxxxxxxxxxx"
 };
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// -------------------------------
-// ユーザー管理
-// -------------------------------
-let currentUser = localStorage.getItem("currentUser") || "haruhito";
+// ===============================
+// ユーザー判定
+// ===============================
+const currentUser = localStorage.getItem("currentUser") || "haruhito";
+const userDoc = doc(db, "counters", currentUser);
 
-// -------------------------------
-// Firestore からデータを読み込む
-// -------------------------------
-async function loadUserData() {
-  const ref = doc(db, "counters", currentUser);
-  const snap = await getDoc(ref);
+// ===============================
+// 月名を自動表示（例：4月のシール枚数）
+// ===============================
+const monthNames = ["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"];
+const now = new Date();
+const currentMonth = monthNames[now.getMonth()];
+document.getElementById("month-title").textContent = `${currentMonth}のシール枚数`;
+
+// ===============================
+// UI 要素
+// ===============================
+const totalEl = document.getElementById("total");
+const historyEl = document.getElementById("history");
+const pastEl = document.getElementById("past");
+
+let total = 0;
+let history = [];
+let past = [];
+
+// ===============================
+// Firestore からデータ読み込み
+// ===============================
+async function loadData() {
+  const snap = await getDoc(userDoc);
 
   if (snap.exists()) {
     const data = snap.data();
@@ -38,97 +60,91 @@ async function loadUserData() {
     history = data.history || [];
     past = data.past || [];
   } else {
-    await setDoc(ref, { total: 0, history: [], past: [] });
-    total = 0;
-    history = [];
-    past = [];
+    await setDoc(userDoc, {
+      total: 0,
+      history: [],
+      past: []
+    });
   }
 
-  document.getElementById("total").textContent = total;
-  renderHistory();
-  renderPast();
+  render();
 }
 
-// -------------------------------
+// ===============================
 // Firestore に保存
-// -------------------------------
+// ===============================
 async function saveAll() {
-  const ref = doc(db, "counters", currentUser);
-  await setDoc(ref, { total, history, past });
-}
-
-// -------------------------------
-// カウンター処理
-// -------------------------------
-let total = 0;
-let history = [];
-let past = [];
-
-async function addNumber(num) {
-  total += num;
-  const now = new Date();
-  history.unshift(now.toLocaleString());
-  history = history.slice(0, 10);
-  document.getElementById("total").textContent = total;
-  await saveAll();
-  renderHistory();
-}
-
-async function undo() {
-  if (total > 0) total -= 1;
-  document.getElementById("total").textContent = total;
-  await saveAll();
-}
-
-async function closeMonth() {
-  const now = new Date();
-  const month = `${now.getMonth() + 1}月`;
-  past.unshift(`${month}：${total}枚`);
-  past = past.slice(0, 12);
-  total = 0;
-  document.getElementById("total").textContent = total;
-  await saveAll();
-  renderPast();
-}
-
-// -------------------------------
-// 表示処理
-// -------------------------------
-function renderHistory() {
-  const list = document.getElementById("history");
-  list.innerHTML = "";
-  history.forEach(item => {
-    const li = document.createElement("li");
-    li.textContent = item;
-    list.appendChild(li);
+  await updateDoc(userDoc, {
+    total: total,
+    history: history,
+    past: past
   });
 }
 
-function renderPast() {
-  const list = document.getElementById("past");
-  list.innerHTML = "";
-  past.forEach(item => {
+// ===============================
+// 画面描画
+// ===============================
+function render() {
+  totalEl.textContent = total;
+
+  historyEl.innerHTML = "";
+  history.slice().reverse().forEach(item => {
     const li = document.createElement("li");
     li.textContent = item;
-    list.appendChild(li);
+    historyEl.appendChild(li);
+  });
+
+  pastEl.innerHTML = "";
+  past.slice().reverse().forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = item;
+    pastEl.appendChild(li);
   });
 }
 
-// -------------------------------
-// ★ onclickの代わりにaddEventListenerを使う（moduleではonclickが使えないため）
-// -------------------------------
-document.getElementById("add-btn").addEventListener("click", () => addNumber(1));
-document.getElementById("undo-btn").addEventListener("click", undo);
-document.getElementById("close-btn").addEventListener("click", closeMonth);
+// ===============================
+// シール追加（メインボタン）
+// ===============================
+document.getElementById("add-btn").addEventListener("click", async () => {
+  total++;
+  const time = new Date().toLocaleString("ja-JP");
+  history.push(`${time}：+1枚`);
 
-// リセットボタン（元コードにはなかったので追加）
-document.getElementById("reset-btn").addEventListener("click", async () => {
-  total = 0;
-  document.getElementById("total").textContent = total;
+  render();
   await saveAll();
 });
 
-// -------------------------------
+// ===============================
+// Undo（シールを剥がす）
+// ===============================
+document.getElementById("undo-btn").addEventListener("click", async () => {
+  if (total > 0) {
+    total--;
+    const time = new Date().toLocaleString("ja-JP");
+    history.push(`${time}：-1枚`);
+
+    render();
+    await saveAll();
+  }
+});
+
+// ===============================
+// 月締め（履歴の下に配置）
+// ===============================
+document.getElementById("close-btn").addEventListener("click", async () => {
+  const monthLabel = `${currentMonth}：${total}枚`;
+
+  past.push(monthLabel);
+
+  // 今月のデータをリセット
+  total = 0;
+  history = [];
+
+  render();
+  await saveAll();
+});
+
+// ===============================
 // 初期読み込み
-// -------------------------------
-loadUserData();
+// ===============================
+loadData();
