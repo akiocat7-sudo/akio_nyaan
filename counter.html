@@ -8,73 +8,38 @@
   <link rel="stylesheet" href="css/counter.css">
 </head>
 <body>
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyCM7YuhH5I3WGOkV7fbWTGvL4ZZYx46l2Q",
-    authDomain: "akionyaan.firebaseapp.com",
-    projectId: "akionyaan",
-    storageBucket: "akionyaan.firebasestorage.app",
-    messagingSenderId: "684249924744",
-    appId: "1:684249924744:web:4e6e449d2310c9a9024b3d",
-    measurementId: "G-8CMM9BC2B5"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
   <div class="container">
-
-    <!-- 月タイトル（JSで「4月のシール枚数」などに書き換え） -->
     <h2 class="title" id="month-title">今月のシール枚数</h2>
-
-    <!-- サブタイトル -->
     <h3 class="subtitle">シールカウンター</h3>
-
-    <!-- 合計値 -->
     <h1 id="total">0</h1>
 
-    <!-- メインボタン（シールを1枚貼る） -->
     <div class="single-button-area">
-      <button class="main-btn" onclick="addNumber(1)">シールを1枚貼る</button>
+      <button class="main-btn" id="add-btn">シールを1枚貼る</button>
     </div>
 
-    <!-- シール演出エリア -->
     <div id="sticker-effect-area"></div>
 
-    <!-- 下部ボタン（シールを剥がす・リセット） -->
     <div class="bottom-buttons">
-      <button class="undo-btn" onclick="undo()">シールを剥がす</button>
-      <button class="reset-btn" onclick="resetTotal()">リセット</button>
+      <button class="undo-btn" id="undo-btn">シールを剥がす</button>
+      <button class="reset-btn" id="reset-btn">リセット</button>
     </div>
 
-    <!-- 履歴（ボタン押下日時 最新10件） -->
     <div class="history-area">
       <h3 class="history-title">履歴</h3>
-      <ul id="history-list"></ul>
+      <ul id="history"></ul>
     </div>
 
-    <!-- 月締めボタン -->
     <div class="month-close-area">
-      <button class="month-close-btn" onclick="closeMonth()">今月のシール枚数を確定する</button>
+      <button class="month-close-btn" id="close-btn">今月のシール枚数を確定する</button>
     </div>
 
-    <!-- 過去の枚数（最大12件） -->
     <div class="past-area">
       <h3 class="past-title">過去の枚数</h3>
-      <ul id="past-list"></ul>
+      <ul id="past"></ul>
     </div>
-
   </div>
 
-  <script src="js/counter.js"></script>
+  <!-- ★ counter.jsをtype="module"で読み込む（これだけでOK） -->
+  <script type="module" src="js/counter.js"></script>
 </body>
 </html>
