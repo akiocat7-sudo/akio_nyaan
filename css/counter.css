@@ -18,10 +18,19 @@ body {
   text-align: center;
 }
 
+/* タイトル */
 .title {
   font-size: 24px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   font-weight: bold;
+}
+
+.subtitle {
+  font-size: 20px;
+  margin-top: -5px;
+  margin-bottom: 20px;
+  color: #555;
+  font-weight: 500;
 }
 
 /* ユーザー選択ボタン（2人用） */
@@ -90,42 +99,6 @@ body {
   filter: brightness(0.85);
 }
 
-/* 下部ボタン（戻る・リセット） */
-.bottom-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-
-.undo-btn {
-  padding: 12px 30px;
-  font-size: 18px;
-  border: none;
-  border-radius: 12px;
-  background: #ffa500;
-  color: #fff;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.undo-btn:hover {
-  background: #cc8400;
-}
-
-.reset-btn {
-  padding: 12px 30px;
-  font-size: 18px;
-  border: none;
-  border-radius: 12px;
-  background: #ff4d4d;
-  color: #fff;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.reset-btn:hover {
-  background: #d93636;
-}
 /* シール演出エリア */
 #sticker-effect-area {
   position: relative;
@@ -157,26 +130,19 @@ body {
     transform: translate(-50%, -40px) scale(0.8);
   }
 }
-/* 履歴表示 */
-.history-area {
-  margin-top: 30px;
-  text-align: center;
+
+/* 下部ボタン（剥がす・リセット） */
+.bottom-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
 
-.history-title {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-#history-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  font-size: 16px;
-  color: #555;
-}
-
-#history-list li {
-  margin: 4px 0;
-}
+.undo-btn {
+  padding: 12px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  background: #ffa500;
+  color: #fff;
+  cursor: pointer

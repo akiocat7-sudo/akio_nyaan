@@ -10,27 +10,37 @@
 
   <div class="container">
 
-    <!-- 追加したタイトル -->
-    <h2 class="title">シールカウンター</h2>
+    <!-- 追加したタイトル（最上部） -->
+    <h2 class="title">今月のシール枚数</h2>
 
+    <!-- メインタイトル -->
+    <h3 class="subtitle">シールカウンター</h3>
+
+    <!-- 合計値 -->
     <h1 id="total">0</h1>
 
+    <!-- メインボタン（シール1枚貼る） -->
     <div class="single-button-area">
-      <button class="main-btn" onclick="addNumber(1)">シールを1枚貼る</button>
+      <button class="main-btn" onclick="addNumber(1)">シール1枚貼る</button>
     </div>
 
+    <!-- シール演出エリア -->
     <div id="sticker-effect-area"></div>
 
+    <!-- 下部ボタン（剥がす・リセット） -->
     <div class="bottom-buttons">
-      <button class="undo-btn" onclick="undo()">ひとつ前に戻る</button>
+      <button class="undo-btn" onclick="undo()">シールを剥がす</button>
       <button class="reset-btn" onclick="resetTotal()">リセット</button>
     </div>
 
+    <!-- 履歴表示 -->
+    <div class="history-area">
+      <h3 class="history-title">履歴</h3>
+      <ul id="history-list"></ul>
+    </div>
+
   </div>
-<div class="history-area">
-  <h3 class="history-title">履歴</h3>
-  <ul id="history-list"></ul>
-</div>
+
   <script src="js/counter.js"></script>
 </body>
 </html>
