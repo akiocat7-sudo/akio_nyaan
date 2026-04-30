@@ -24,19 +24,20 @@
       <button class="reset-btn" id="reset-btn">リセット</button>
     </div>
 
-    <div class="history-area">
-      <h3 class="history-title">履歴</h3>
-      <ul id="history"></ul>
-    </div>
-
+<div id="lists-wrapper">
+  <div class="list-block">
+    <h3>履歴</h3>
+    <ul id="history"></ul>
+  </div>
     <div class="month-close-area">
       <button class="month-close-btn" id="close-btn">今月のシール枚数を確定する</button>
     </div>
 
-    <div class="past-area">
-      <h3 class="past-title">過去の枚数</h3>
-      <ul id="past"></ul>
-    </div>
+  <div class="list-block">
+    <h3>過去12ヶ月</h3>
+    <ul id="past"></ul>
+  </div>
+</div>
   </div>
 
   <!-- ★ counter.jsをtype="module"で読み込む（これだけでOK） -->
