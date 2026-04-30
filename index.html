@@ -3,25 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ログイン</title>
-  <link rel="stylesheet" href="css/login.css">
+  <title>User Select</title>
+  <link rel="stylesheet" href="css/counter.css">
 </head>
 <body>
 
-  <div class="login-container">
+  <div class="container">
+    <h2 class="title">ユーザーを選択</h2>
 
-    <h2 class="title">ようこそ</h2>
-    <p class="subtitle">シールカウンター ログイン</p>
-
-    <div class="login-box">
-      <input type="text" id="user-id" placeholder="ユーザーID">
-      <input type="password" id="password" placeholder="パスワード">
-
-      <button id="login-btn" class="login-btn">ログイン</button>
-
-      <p id="message" class="message"></p>
+    <div class="user-button-grid">
+      <button class="user-btn user-haruhito" onclick="loginAs('haruhito')">はるひと</button>
+      <button class="user-btn user-chika" onclick="loginAs('chika')">ちか</button>
     </div>
-
   </div>
 
   <script src="js/login.js"></script>

@@ -7,7 +7,7 @@ body {
 }
 
 /* コンテナ */
-.login-container {
+.container {
   max-width: 360px;
   margin: 80px auto;
   text-align: center;
@@ -15,66 +15,49 @@ body {
 
 /* タイトル */
 .title {
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 700;
   color: #333;
-  margin-bottom: 6px;
-}
-
-.subtitle {
-  font-size: 14px;
-  color: #777;
   margin-bottom: 26px;
 }
 
-/* ボックス */
-.login-box {
-  background: white;
-  padding: 28px 24px;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+/* ユーザーボタンのグリッド */
+.user-button-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 20px;
 }
 
-/* 入力欄 */
-.login-box input {
-  width: 100%;
-  padding: 14px;
-  margin-bottom: 14px;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  font-size: 14px;
-  outline: none;
-  transition: 0.2s;
-}
-
-.login-box input:focus {
-  border-color: #ff9fc8;
-  box-shadow: 0 0 6px rgba(255,150,180,0.3);
-}
-
-/* ログインボタン（パステル） */
-.login-btn {
-  width: 100%;
-  padding: 14px;
-  font-size: 16px;
+/* ボタン共通（パステル） */
+.user-btn {
+  padding: 16px 0;
+  font-size: 18px;
   border: none;
   border-radius: 14px;
   cursor: pointer;
   font-weight: 600;
-  background: linear-gradient(135deg, #ffb7d5, #ff8fb8);
   color: white;
   box-shadow: 0 4px 12px rgba(255,150,180,0.25);
   transition: 0.25s;
 }
 
-.login-btn:hover {
+/* はるひと（ピンクパステル） */
+.user-haruhito {
+  background: linear-gradient(135deg, #ffb7d5, #ff8fb8);
+}
+
+.user-haruhito:hover {
   background: linear-gradient(135deg, #ff9fc8, #ff7aa8);
   box-shadow: 0 6px 16px rgba(255,150,180,0.35);
 }
 
-/* メッセージ */
-.message {
-  margin-top: 14px;
-  font-size: 14px;
-  color: #ff6b7a;
+/* ちか（パープルパステル） */
+.user-chika {
+  background: linear-gradient(135deg, #d7b7ff, #c28bff);
+}
+
+.user-chika:hover {
+  background: linear-gradient(135deg, #cfa6ff, #b875ff);
+  box-shadow: 0 6px 16px rgba(200,150,255,0.35);
 }
