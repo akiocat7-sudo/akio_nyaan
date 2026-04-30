@@ -51,13 +51,17 @@
 
 <!-- SPEAKER PROFILE -->
 <section id="speaker" class="section section-alt">
-  <div class="container speaker-wrap">
+  <div class="container speaker-wrap" style="display:flex; align-items:flex-start; gap:40px;">
 
-    <div class="speaker-photo">
-      <img src="img/speaker.jpg" alt="インタビュー人物写真">
+    <!-- 左：縦長写真 -->
+    <div class="speaker-photo" style="flex-shrink:0;">
+      <img src="img/KenichiSato.png" 
+           alt="インタビュー人物写真"
+           style="width:220px; height:320px; object-fit:cover; border-radius:16px;">
     </div>
 
-    <div class="speaker-info">
+    <!-- 右：話す人〜ポイント3つまでを1ブロック化 -->
+    <div class="speaker-info" style="flex:1;">
       <h2>話す人</h2>
       <p class="section-lead">未来の都市を描くキーパーソン</p>
 
@@ -91,7 +95,6 @@
     <div class="life-grid">
 
       <div class="life-item">
-        <img src="img/life-morning.png" alt="朝の街のイメージ">
         <h3>光に満ちた朝、徒歩圏で始まる一日</h3>
         <p>
           住宅エリアからオフィス、学校、カフェまでが徒歩圏に集約されたコンパクトシティ。  
@@ -100,7 +103,6 @@
       </div>
 
       <div class="life-item">
-        <img src="img/life-work.png" alt="働くイメージ">
         <h3>自然とテクノロジーが共存するワークスタイル</h3>
         <p>
           緑に囲まれたオフィス街には、屋外ワークスペースや共有ラウンジが点在。  
@@ -109,7 +111,6 @@
       </div>
 
       <div class="life-item">
-        <img src="img/life-family.png" alt="家族のイメージ">
         <h3>子育てがしやすい、安心の生活動線</h3>
         <p>
           保育園・学校・医療施設が近接し、移動の負担が少ない街。  
@@ -118,7 +119,6 @@
       </div>
 
       <div class="life-item">
-        <img src="img/life-night.png" alt="夜の街のイメージ">
         <h3>夜も安心して歩ける、やさしい光の街</h3>
         <p>
           エネルギー効率の高い街路照明と、歩行者中心の安全設計。  
@@ -133,14 +133,22 @@
 <!-- INTERVIEW -->
 <section id="interview" class="section">
   <div class="container">
-    <h2>インタビュー</h2>
-    <p class="section-lead">「都市は、人が未来を描くための“器”です」</p>
+
+    <div class="interview-header" 
+         style="display:flex; align-items:center; justify-content:space-between; gap:40px;">
+
+      <div class="interview-title-block" style="flex:1;">
+        <h2 style="margin:0;">インタビュー</h2>
+        <p class="section-lead" style="margin-top:8px;">
+          「都市は、人が未来を描くための“器”です」
+        </p>
+      </div>
+
+    </div>
 
     <article class="interview-article">
 
-      <!-- CHAPTER 1 -->
-      <img src="img/interview-1.png" alt="都市開発の背景" style="width:100%; border-radius:16px; margin:30px 0;">
-      <h3>【第1章】都市開発を始めた理由──「未来の暮らしを守るために」</h3>
+      <h3>都市開発を始めた理由──「未来の暮らしを守るために」</h3>
       <p>
         私たちがこのプロジェクトに踏み切った理由は、  
         地域の人口減少や産業の空洞化が進む中で、  
@@ -153,9 +161,7 @@
         私たちの使命だと考えています。
       </p>
 
-      <!-- CHAPTER 2 -->
-      <img src="img/interview-2.png" alt="未来都市のビジョン" style="width:100%; border-radius:16px; margin:30px 0;">
-      <h3>【第2章】目指す都市像──「コンパクトで、サステナブルで、コミュニティが育つ街」</h3>
+      <h3>目指す都市像──「コンパクトで、サステナブルで、コミュニティが育つ街」</h3>
       <p>
         私たちが目指すのは「コンパクトで、サステナブルで、コミュニティが育つ都市」です。  
         生活・仕事・教育・医療・交流が徒歩圏で完結し、  
@@ -170,9 +176,7 @@
         新しいアイデアが育つような環境をつくりたいと考えています。
       </p>
 
-      <!-- CHAPTER 3 -->
-      <img src="img/interview-3.png" alt="技術と都市" style="width:100%; border-radius:16px; margin:30px 0;">
-      <h3>【第3章】技術の活用──「スマートシティ基盤で暮らしを最適化」</h3>
+      <h3>技術の活用──「スマートシティ基盤で暮らしを最適化」</h3>
       <p>
         未来の都市に欠かせないのが「デジタルインフラ」です。  
         私たちは、街全体を IoT とデータでつなぐ “スマートシティ基盤” を導入します。  
@@ -185,9 +189,7 @@
         災害時にもエリア単位で電力を維持できる “レジリエンス都市” を目指しています。
       </p>
 
-      <!-- CHAPTER 4 -->
-      <img src="img/interview-4.png" alt="未来の暮らし" style="width:100%; border-radius:16px; margin:30px 0;">
-      <h3>【第4章】未来の暮らし──「もっと軽やかで、もっと自由に」</h3>
+      <h3>未来の暮らし──「もっと軽やかで、もっと自由に」</h3>
       <p>
         未来の暮らしは、もっと軽やかで、もっと自由になると考えています。  
         例えば、徒歩圏に保育園・学校・医療施設・商業施設が揃うことで、  
@@ -199,9 +201,7 @@
         高齢者にとっても、移動しやすい街は大きな安心につながります。
       </p>
 
-      <!-- CHAPTER 5 -->
-      <img src="img/interview-5.png" alt="都市の未来像" style="width:100%; border-radius:16px; margin:30px 0;">
-      <h3>【第5章】都市が描く未来──「人が自分らしく生きられる場所へ」</h3>
+      <h3>都市が描く未来──「人が自分らしく生きられる場所へ」</h3>
       <p>
         私たちが描く未来は、  
         「人が自分らしく生きられる都市」です。  
