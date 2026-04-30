@@ -1,4 +1,4 @@
-/* css/counter.css */
+/* 共通レイアウト */
 body {
   margin: 0;
   padding: 0;
@@ -14,6 +14,37 @@ body {
   text-align: center;
 }
 
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* ユーザー選択カード */
+.user-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  gap: 20px;
+  justify-content: center;
+}
+
+.user-card {
+  background: #fff;
+  padding: 25px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.user-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* カウンター画面 */
 #total {
   font-size: 60px;
   margin-bottom: 30px;
@@ -25,7 +56,7 @@ body {
   grid-template-columns: repeat(5, 70px);
   gap: 15px;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .button-grid button {
@@ -43,26 +74,14 @@ body {
   background: #005fcc;
 }
 
-.reset-btn {
-  margin-top: 5px;
-  padding: 12px 30px;
-  font-size: 18px;
-  border: none;
-  border-radius: 10px;
-  background: #ff4d4d;
-  color: #fff;
-  cursor: pointer;
-  transition: 0.2s;
-  display: inline-block;
-}
-
-.reset-btn:hover {
-  background: #d93636;
+/* 下部ボタン */
+.bottom-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
 
 .undo-btn {
-  margin-top: 5px;
-  margin-left: 10px;
   padding: 12px 30px;
   font-size: 18px;
   border: none;
@@ -71,9 +90,23 @@ body {
   color: #fff;
   cursor: pointer;
   transition: 0.2s;
-  display: inline-block;
 }
 
 .undo-btn:hover {
   background: #cc8400;
+}
+
+.reset-btn {
+  padding: 12px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  background: #ff4d4d;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.reset-btn:hover {
+  background: #d93636;
 }
