@@ -2,23 +2,36 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Move Character</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Select</title>
+  <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
 
-  <canvas id="game" width="600" height="300"></canvas>
+  <div class="container">
+    <h2 class="title">ユーザーを選択</h2>
 
-  <!-- 十字キー -->
-  <div id="dpad">
-    <button class="btn up">▲</button>
-    <div class="middle-row">
-      <button class="btn left">◀</button>
-      <button class="btn right">▶</button>
+    <div class="user-grid">
+      <div class="user-card" onclick="loginAs('user1')">
+        <p>ユーザー1</p>
+      </div>
+
+      <div class="user-card" onclick="loginAs('user2')">
+        <p>ユーザー2</p>
+      </div>
+
+      <div class="user-card" onclick="loginAs('user3')">
+        <p>ユーザー3</p>
+      </div>
+
+      <div class="user-card" onclick="loginAs('user4')">
+        <p>ユーザー4</p>
+      </div>
     </div>
-    <button class="btn down">▼</button>
+
+    <p id="message"></p>
   </div>
 
-  <script src="js/game.js"></script>
+  <script src="js/login.js"></script>
 </body>
 </html>

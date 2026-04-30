@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "山田 太郎",
+    "username": "yamada_taro",
+    "role": "管理者",
+    "avatar": "山太"
+  },
+  {
+    "id": 2,
+    "name": "鈴木 花子",
+    "username": "suzuki_hanako",
+    "role": "編集者",
+    "avatar": "鈴花"
+  },
+  {
+    "id": 3,
+    "name": "田中 一郎",
+    "username": "tanaka_ichiro",
+    "role": "閲覧者",
+    "avatar": "田一"
+  },
+  {
+    "id": 4,
+    "name": "佐藤 美咲",
+    "username": "sato_misaki",
+    "role": "編集者",
+    "avatar": "佐美"
+  },
+  {
+    "id": 5,
+    "name": "伊藤 健太",
+    "username": "ito_kenta",
+    "role": "閲覧者",
+    "avatar": "伊健"
+  }
+]

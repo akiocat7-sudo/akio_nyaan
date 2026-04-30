@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>カウンター</title>
+  <link rel="stylesheet" href="css/counter.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1 id="total">0</h1>
+
+    <div class="button-grid">
+      <button onclick="addNumber(1)">1</button>
+      <button onclick="addNumber(2)">2</button>
+      <button onclick="addNumber(3)">3</button>
+      <button onclick="addNumber(4)">4</button>
+      <button onclick="addNumber(5)">5</button>
+      <button onclick="addNumber(6)">6</button>
+      <button onclick="addNumber(7)">7</button>
+      <button onclick="addNumber(8)">8</button>
+      <button onclick="addNumber(9)">9</button>
+      <button onclick="addNumber(10)">10</button>
+    </div>
+
+    <button class="reset-btn" onclick="resetTotal()">リセット</button>
+    <button class="undo-btn" onclick="undo()">ひとつ前に戻る</button>
+  </div>
+
+  <script src="js/counter.js"></script>
+</body>
+</html>
