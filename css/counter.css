@@ -24,7 +24,7 @@ body {
   font-weight: bold;
 }
 
-/* ユーザー選択ボタン */
+/* ユーザー選択ボタン（2人用） */
 .user-button-grid {
   display: grid;
   grid-template-columns: repeat(2, 150px);
@@ -46,10 +46,13 @@ body {
 }
 
 /* 都会的テーマカラー（ユーザー選択画面） */
-.user1 { background: #1E88E5; } /* Tokyo Blue */
-.user2 { background: #4CAF50; } /* Forest Gray-Green */
-.user3 { background: #7E57C2; } /* Metro Purple */
-.user4 { background: #FB8C00; } /* Sunset Orange */
+.user-haruhito {
+  background: #1E88E5; /* Tokyo Blue */
+}
+
+.user-chika {
+  background: #7E57C2; /* Metro Purple */
+}
 
 .user-btn:hover {
   filter: brightness(0.85);
