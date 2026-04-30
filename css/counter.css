@@ -42,3 +42,38 @@ html, body {
 
 /* メインボタン */
 .single-button-area {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.main-btn {
+  width: 100%;
+  padding: 16px;
+  font-size: 18px;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* シール演出エリア */
+#sticker-effect-area {
+  position: relative;
+  height: 0;
+}
+
+/* 下部ボタン（リセット削除済み） */
+.bottom-buttons {
+  display: flex;
+  justify-content: center; /* ← 1ボタンなので中央寄せ */
+  margin-top: 10px;
+}
+
+.undo-btn {
+  padding: 12px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background
