@@ -1,4 +1,3 @@
-<!-- counter.html -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -9,38 +8,53 @@
 </head>
 <body>
   <div class="container">
+
+    <!-- タイトル -->
     <h2 class="title" id="month-title">今月のシール枚数</h2>
     <h3 class="subtitle">シールカウンター</h3>
+
+    <!-- 合計 -->
     <h1 id="total">0</h1>
 
+    <!-- メインボタン -->
     <div class="single-button-area">
       <button class="main-btn" id="add-btn">シールを1枚貼る</button>
     </div>
 
+    <!-- シール演出 -->
     <div id="sticker-effect-area"></div>
 
+    <!-- 下部ボタン -->
     <div class="bottom-buttons">
       <button class="undo-btn" id="undo-btn">シールを剥がす</button>
       <button class="reset-btn" id="reset-btn">リセット</button>
     </div>
 
-<div id="lists-wrapper">
-  <div class="list-block">
-    <h3>履歴</h3>
-    <ul id="history"></ul>
-  </div>
-    <div class="month-close-area">
-      <button class="month-close-btn" id="close-btn">今月のシール枚数を確定する</button>
+    <!-- 履歴・月締め・過去12ヶ月（横並び3カラム） -->
+    <div id="lists-wrapper">
+
+      <!-- 履歴 -->
+      <div class="list-block">
+        <h3>シール貼り履歴</h3>
+        <ul id="history"></ul>
+      </div>
+
+      <!-- 月締めボタン（中央） -->
+      <div class="month-close-area">
+        <button class="month-close-btn" id="close-btn">今月のシール枚数を確定する</button>
+      </div>
+
+      <!-- 過去12ヶ月 -->
+      <div class="list-block">
+        <h3>月締めボタン履歴</h3>
+        <ul id="past"></ul>
+      </div>
+
     </div>
 
-  <div class="list-block">
-    <h3>過去12ヶ月</h3>
-    <ul id="past"></ul>
-  </div>
-</div>
   </div>
 
-  <!-- ★ counter.jsをtype="module"で読み込む（これだけでOK） -->
+  <!-- Firestore同期版 counter.js -->
   <script type="module" src="js/counter.js"></script>
 </body>
 </html>
