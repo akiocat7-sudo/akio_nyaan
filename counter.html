@@ -3,24 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>カウンター</title>
+  <title>シールカウンター</title>
   <link rel="stylesheet" href="css/counter.css">
 </head>
 <body>
 
   <div class="container">
+
+    <!-- 追加したタイトル -->
+    <h2 class="title">シールカウンター</h2>
+
     <h1 id="total">0</h1>
 
     <div class="single-button-area">
-      <button class="main-btn" onclick="addNumber(1)">シール1枚貼る</button>
+      <button class="main-btn" onclick="addNumber(1)">シールを1枚貼る</button>
     </div>
+
+    <div id="sticker-effect-area"></div>
 
     <div class="bottom-buttons">
       <button class="undo-btn" onclick="undo()">ひとつ前に戻る</button>
       <button class="reset-btn" onclick="resetTotal()">リセット</button>
     </div>
-  </div>
 
+  </div>
+<div class="history-area">
+  <h3 class="history-title">履歴</h3>
+  <ul id="history-list"></ul>
+</div>
   <script src="js/counter.js"></script>
 </body>
 </html>
